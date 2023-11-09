@@ -47,12 +47,14 @@
 * Nas configurações, use:
 * ```
   modo de autenticação: Cadeia de conexão
-  Nome de política do Hub de Eventos: Criar novo
+  Nome de política do Hub de Eventos: UsarExistente
+  Nome de política do Hub de Eventos: RootManagerSharedAccessKey
   Formato de serialização de evento: virgula(,)
   ```
 * Agora vamos montar a saida, essa saida deve ser feita para o banco de dados cosmoDB que foi criado anteriormente. É ele que vai receber as informações em streaming
 * ![image](https://github.com/Antonio-Borges-Rufino/Azure-Stream-Analytics-for-Real-Time-Cab-Service-Monitoring/assets/86124443/5fdeade0-a799-4e10-b564-0e512e52849a)
 * ID_transac é um campo no streaming que vai funcionar como chave primária das informações no cosmo
+
 
 
 
