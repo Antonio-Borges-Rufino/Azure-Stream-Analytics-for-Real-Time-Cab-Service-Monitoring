@@ -54,6 +54,16 @@
 * Agora vamos montar a saida, essa saida deve ser feita para o banco de dados cosmoDB que foi criado anteriormente. É ele que vai receber as informações em streaming
 * ![image](https://github.com/Antonio-Borges-Rufino/Azure-Stream-Analytics-for-Real-Time-Cab-Service-Monitoring/assets/86124443/5fdeade0-a799-4e10-b564-0e512e52849a)
 * ID_transac é um campo no streaming que vai funcionar como chave primária das informações no cosmo
+* O próximo passo é executar a função de processamento nos dados de streaming. Para isso, vamos acessar a aba consulta do Stream Analytics.
+* Podemos usar o SQL padrão para definir de qual Event Hub estamos pegando os dados, então processa-los e por fim inserilos no cosmosDB
+* ![image](https://github.com/Antonio-Borges-Rufino/Azure-Stream-Analytics-for-Real-Time-Cab-Service-Monitoring/assets/86124443/f03c2087-b1d7-4a5a-bd49-cc16e7e557a3)
+* Temos que conhecer nosso conjunto de dados, então vou indicar o que é tabela e coluna, mas isso varia de conjunto de dados para conjunto de dados.
+* Nesse caso, as tabelas são os hubs de eventos, e temos 2, taxi-tarifa, com informações sobre o pagamento, e taxi-viagens, com infomrações sobre a viagem, como distancia, quantidade de pessoas, id_viagem e etc.
+* Diferente do projeto original, vou gerar esses dados usando python e numeros randomicos.
+* Voltando a consulta do Stream Analytics, vamos recuperando os dados do hub taxi-tarifa
+* ```
+  
+  ```
 
 
 
