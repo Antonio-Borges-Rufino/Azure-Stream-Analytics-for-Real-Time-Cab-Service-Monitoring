@@ -24,6 +24,15 @@
 * Pronto, criamos os tópicos de conversa
 
 # Criação do CosmoDB
+* Digite cosmoDB no painel de buscas de serviço, inicie um novo serviço cosmoDB core(SQL)
+* As configurações são a padrão. As minhas ficaram assim:
+* ![image](https://github.com/Antonio-Borges-Rufino/Azure-Stream-Analytics-for-Real-Time-Cab-Service-Monitoring/assets/86124443/6b1c39ba-05cc-472e-babe-211d08f971e9)
+* Adicione uma coleção ao recurso. A coleção é o banco de dados que vamos usar
+* ![image](https://github.com/Antonio-Borges-Rufino/Azure-Stream-Analytics-for-Real-Time-Cab-Service-Monitoring/assets/86124443/6dde6c51-9c2e-42b8-a42c-a0a3b6371fa9)
+* Como as configurações são pessoais, não vou mostrar, mas depois que criar o banco, deve ficar como na imagem abaixo.
+* ![image](https://github.com/Antonio-Borges-Rufino/Azure-Stream-Analytics-for-Real-Time-Cab-Service-Monitoring/assets/86124443/2c2d08aa-7de6-4606-a0dd-9ccb05d2fa4d)
+
+
 
  
 
