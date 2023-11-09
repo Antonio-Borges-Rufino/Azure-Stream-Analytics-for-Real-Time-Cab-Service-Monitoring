@@ -32,6 +32,29 @@
 * Como as configurações são pessoais, não vou mostrar, mas depois que criar o banco, deve ficar como na imagem abaixo.
 * ![image](https://github.com/Antonio-Borges-Rufino/Azure-Stream-Analytics-for-Real-Time-Cab-Service-Monitoring/assets/86124443/2c2d08aa-7de6-4606-a0dd-9ccb05d2fa4d)
 
+# Criando Stream Analytics Job
+* O Stream Analytics Job é um recurso da Azure que permite que possamos fazer processamentos nos dados em real time
+* Podemos concatenar, multiplicar e fazer diversas outras operações
+* Para criar um Stream Analytics Job basta ir no menu de recursos da Azure e procurar
+* Agora vamos inserir um novo processo
+* ![image](https://github.com/Antonio-Borges-Rufino/Azure-Stream-Analytics-for-Real-Time-Cab-Service-Monitoring/assets/86124443/05243ffb-c97c-41c2-92cb-72caccb3b9ff)
+* A configuração deve ficar mais ou menos assim
+* ![image](https://github.com/Antonio-Borges-Rufino/Azure-Stream-Analytics-for-Real-Time-Cab-Service-Monitoring/assets/86124443/a4ac7d9c-b6d0-4b26-a439-bce40fde8e2d)
+* Depois que criamos o recurso, vamos até ele para configurar
+* ![image](https://github.com/Antonio-Borges-Rufino/Azure-Stream-Analytics-for-Real-Time-Cab-Service-Monitoring/assets/86124443/91530e51-d188-497c-9aa3-95b02820982b)
+* Agora, crie uma nova entrada e configure para os 2 hubs de eventos criados anteriormente
+* ![image](https://github.com/Antonio-Borges-Rufino/Azure-Stream-Analytics-for-Real-Time-Cab-Service-Monitoring/assets/86124443/4194aa44-e5f1-4ab7-a4b9-684bc790a1cd)
+* Nas configurações, use:
+* ```
+  modo de autenticação: Cadeia de conexão
+  Nome de política do Hub de Eventos: Criar novo
+  Formato de serialização de evento: virgula(,)
+  ```
+* Agora vamos montar a saida, essa saida deve ser feita para o banco de dados cosmoDB que foi criado anteriormente. É ele que vai receber as informações em streaming
+* ![image](https://github.com/Antonio-Borges-Rufino/Azure-Stream-Analytics-for-Real-Time-Cab-Service-Monitoring/assets/86124443/5fdeade0-a799-4e10-b564-0e512e52849a)
+* ID_transac é um campo no streaming que vai funcionar como chave primária das informações no cosmo
+
+
 
 
  
