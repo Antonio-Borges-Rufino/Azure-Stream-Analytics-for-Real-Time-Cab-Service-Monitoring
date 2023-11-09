@@ -62,9 +62,19 @@
 * Diferente do projeto original, vou gerar esses dados usando python e numeros randomicos.
 * Voltando a consulta do Stream Analytics, vamos recuperando os dados do hub taxi-tarifa
 * ```
-  
+  SELECT 
+    tf.preco,
+    tf.avaliacao,
+    tv.distancia_km,
+    tv.temp_percurso_m,
+    tv.qtd_paradas
+  INTO
+    [container-streaming]
+  FROM [taxi-tarifa] tf JOIN [taxi-viagens] tv 
+    ON tf.id_viajem = tv.id_viajem 
+    and DATEDIFF(minute, tf, tv) BETWEEN 0 AND 15
   ```
-
+* Primeiro, definimos o que vamos recuperar usando a clausula SELECT, essas colunas devem ser enviadas através dos hubs de eventos junto aos dados. INTO indica qual é o destino final dos dados processados enquanto que DATEDIFF é usado para alinhas em espaços de tempo em que as requisções chegam, já que estamos falando de um processamento em streaming.
 
 
 
