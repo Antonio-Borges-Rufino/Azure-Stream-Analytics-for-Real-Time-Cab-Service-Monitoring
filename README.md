@@ -157,11 +157,38 @@
 * Agora vá até consulta e salve a consulta padrão que está determinada. Essa consulta recebe os dados e os envia para o banco de dados. A imagem abaixo mostra a consulta e os comandos.
 * ![image](https://github.com/Antonio-Borges-Rufino/Build-Streaming-Data-Pipeline-using-Azure-Stream-Analytics/assets/86124443/d11cf2bd-f74f-491d-af65-4a97d53d4082)
 * Aqui vamos destacar apenas uma diferença, no Stream Analytics, a consulta é inserida na saída através da clausula 'INTO', netão nessa clausula indicamos a saída, nesse caso o nome da saída que configuramos anteriormente e na clausula 'FROM' indicamos a entrada, nesse caso, podemos ter N saidas e N entradas. No mais, tudo funciona como um SQL normal.
+* Para a inserção correta na tabela, use o código SQL
+* ```
+  SELECT
+    id_corrida,
+    n_pessoas,
+    custo,
+    distancia,
+    nota
+  INTO
+    [taxi-stream-bd]
+  FROM
+    [transport-event-streaming]
+  ```
+* Agora é só executar o trabalho
+* ![image](https://github.com/Antonio-Borges-Rufino/Build-Streaming-Data-Pipeline-using-Azure-Stream-Analytics/assets/86124443/da37b2ee-16ee-4bf8-9342-3293413498d0)
+* No meu caso eu já executei, por isso está pedindo pra parar
+# Executando
+* Execute o script python que envia informações
+* ![image](https://github.com/Antonio-Borges-Rufino/Build-Streaming-Data-Pipeline-using-Azure-Stream-Analytics/assets/86124443/946e4f1c-8447-40ee-afae-ad0d66a0b962)
+* Eu executei meu script no google colab, com ele, da pra ver as informações sendo enviadas
+* Va até o banco de dados e veja se alguma informação foi enviada
+* ![image](https://github.com/Antonio-Borges-Rufino/Build-Streaming-Data-Pipeline-using-Azure-Stream-Analytics/assets/86124443/ac18ba4a-f1d8-4be4-a703-15b2a44d741f)
+* Pronto, agora as informações estão transitando da maneira correta
+
+# Integração com PowerBy
 
 # Problemas com a conta azure
 * Aparentemente, não consigo usar o stream analitycs com essa conta, testei diversas quantidades de partições e units e nenhuma funcionou, todas estão dando o mesmo erro.
 * ![image](https://github.com/Antonio-Borges-Rufino/Build-Streaming-Data-Pipeline-using-Azure-Stream-Analytics/assets/86124443/9d43f335-aac6-4800-ab25-22bfb15a3212)
-* Infelizmente, até resolver o problema, esse projeto ficará parado.
+* Resolvi o problema reduzindo meu Stream Unit para 1/3
+* ![image](https://github.com/Antonio-Borges-Rufino/Build-Streaming-Data-Pipeline-using-Azure-Stream-Analytics/assets/86124443/882c4567-25d3-4b8c-8189-b9a530b4cb55)
+
 
 
 
