@@ -88,6 +88,8 @@
   * A imagem abaixo mostra uma parte do gráfico
   * ![image](https://github.com/Antonio-Borges-Rufino/Build-Streaming-Data-Pipeline-using-Azure-Stream-Analytics/assets/86124443/ab540023-4522-4cac-8bc3-8f2f2f6db349)
   * O código está funcionando
+  # Crie um banco de dados SQL do Azure
+  # Crie um trabalho de análise de fluxo do Azure.
 
 
 
