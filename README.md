@@ -158,6 +158,12 @@
 * ![image](https://github.com/Antonio-Borges-Rufino/Build-Streaming-Data-Pipeline-using-Azure-Stream-Analytics/assets/86124443/d11cf2bd-f74f-491d-af65-4a97d53d4082)
 * Aqui vamos destacar apenas uma diferença, no Stream Analytics, a consulta é inserida na saída através da clausula 'INTO', netão nessa clausula indicamos a saída, nesse caso o nome da saída que configuramos anteriormente e na clausula 'FROM' indicamos a entrada, nesse caso, podemos ter N saidas e N entradas. No mais, tudo funciona como um SQL normal.
 
+# Problemas com a conta azure
+* Aparentemente, não consigo usar o stream analitycs com essa conta, testei diversas quantidades de partições e units e nenhuma funcionou, todas estão dando o mesmo erro.
+* ![image](https://github.com/Antonio-Borges-Rufino/Build-Streaming-Data-Pipeline-using-Azure-Stream-Analytics/assets/86124443/9d43f335-aac6-4800-ab25-22bfb15a3212)
+* Infelizmente, até resolver o problema, esse projeto ficará parado.
+
+
 
 
 
