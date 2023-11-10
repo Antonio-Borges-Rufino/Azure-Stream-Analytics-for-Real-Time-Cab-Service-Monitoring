@@ -75,9 +75,9 @@
     and DATEDIFF(minute, tf, tv) BETWEEN 0 AND 15
   ```
 * Primeiro, definimos o que vamos recuperar usando a clausula SELECT, essas colunas devem ser enviadas através dos hubs de eventos junto aos dados. INTO indica qual é o destino final dos dados processados enquanto que DATEDIFF é usado para alinhas em espaços de tempo em que as requisções chegam, já que estamos falando de um processamento em streaming.
-# Criar Consumidor do Event Hub
-* Aqui vou criar o código python que vai enviar os dados para o event hub
-* 
+# Observação sobre o projeto
+* A documentação de acesso ao eventhub e rasa e dificultou mt meu projeto. Tive que lidar com alguns erros de processamento que mesmo reduzindo o tamanho do das query ele dava erro. Não sei bem o que aconteceu e não pretendo lidar de novo com esse projeto.
+* Existe também uma escassa documentação sobre erros para azure.
 
 
 
