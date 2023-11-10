@@ -11,4 +11,10 @@
 * Execute o script python, que enviará dados de streaming do hub de eventos para o banco de dados SQL do Azure.
 * Carregue dados de tabelas de banco de dados SQL do Azure no Power BI.
 * Crie um painel no Power BI.
+# Crie um hub de eventos Azure
+* Para criar um hub de eventos, antes, precisamos criar um grupo de recursos
+* Depois de criar o grupo de recursos, vá no marketplace e crie um hub de eventos
+* ![image](https://github.com/Antonio-Borges-Rufino/Build-Streaming-Data-Pipeline-using-Azure-Stream-Analytics/assets/86124443/1903fa28-4d57-4ee0-9888-b00e01ae7286)
+* 
+
 
