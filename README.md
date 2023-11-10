@@ -50,18 +50,18 @@
     def __str__(self):
         return f"{self.id_corrida}, {self.n_pessoas}, {self.custo}, {self.distancia}, {self.nota}"
   ```
-  * Essa classe vai receber os atributos e vai virar um json que vamos enviar para o event hub
-  * Agora vamos criar a função que vai enviar os eventos a partir da biblioteca do event hub
-  * ```
+* Essa classe vai receber os atributos e vai virar um json que vamos enviar para o event hub
+* Agora vamos criar a função que vai enviar os eventos a partir da biblioteca do event hub
+* ```
     def send_to_eventhub(client, data):
       event_data_batch = client.create_batch()
       event_data_batch.add(EventData(data))
       client.send_batch(event_data_batch)
-    ```
-  * A função recebe como parâmetro o client, que é a conexão que utiliza a string de conexão e a data, que é a classe transport retornada em json
-  * Depois ele envia os dados através do send_batch
-  * Agora vamos criar a função que vai instanciar as classes, transformar o objeto em json e vai enviar a requisão
-  * ```
+  ```
+* A função recebe como parâmetro o client, que é a conexão que utiliza a string de conexão e a data, que é a classe transport retornada em json
+* Depois ele envia os dados através do send_batch
+* Agora vamos criar a função que vai instanciar as classes, transformar o objeto em json e vai enviar a requisão
+* ```
     def main(count):
       client = EventHubProducerClient.from_connection_string(connection_str, eventhub_name=eventhub_name)
       n_pessoas = random.randint(0,4)
@@ -71,25 +71,34 @@
       weather = Transport(count,n_pessoas,custo,distancia,nota)
       send_to_eventhub(client, json.dumps(weather.__dict__))
       print(json.dumps(weather.__dict__))
-    ```
-  * A função recebe um parâmetro count onde eu vou passar o id_corrida para ela, isso no mundo real não é assim, mas como é só uma implementação para simular um streaming de dados. vou deixar.
-  * Depois instanciamos EventHubProducerClient que recebe as strings de conexão, é ele quem faz a conexão com o hub event
-  * As variaveis antes da instancia da classe de transport apenas criam valores aleatorios que vão ser passados como parâmetro para a classe transport
-  * Instancio a classe transport com os valores do que seria a informação passada por um usuario e depois envio a informação através da função send_to_eventhub
-  * Os dados são enviados em uma transformação da classe em um jason
-  * Depois eu printo os dados
-  * Por fim, vou criar um looping que vai ficar enviando os eventos em determinado tempo
-  * ```
+  ```
+* A função recebe um parâmetro count onde eu vou passar o id_corrida para ela, isso no mundo real não é assim, mas como é só uma implementação para simular um streaming de dados. vou deixar.
+* Depois instanciamos EventHubProducerClient que recebe as strings de conexão, é ele quem faz a conexão com o hub event
+* As variaveis antes da instancia da classe de transport apenas criam valores aleatorios que vão ser passados como parâmetro para a classe transport
+* Instancio a classe transport com os valores do que seria a informação passada por um usuario e depois envio a informação através da função send_to_eventhub
+* Os dados são enviados em uma transformação da classe em um jason
+* Depois eu printo os dados
+* Por fim, vou criar um looping que vai ficar enviando os eventos em determinado tempo
+* ```
     for count in range(1,150):
       main(count)
       time.sleep(30)
-    ```
-  * O looping mostre que de 30 em 30 segundos enviamos uma mensagem para o hub de eventos
-  * A imagem abaixo mostra uma parte do gráfico
-  * ![image](https://github.com/Antonio-Borges-Rufino/Build-Streaming-Data-Pipeline-using-Azure-Stream-Analytics/assets/86124443/ab540023-4522-4cac-8bc3-8f2f2f6db349)
-  * O código está funcionando
-  # Crie um banco de dados SQL do Azure
-  # Crie um trabalho de análise de fluxo do Azure.
+  ```
+* O looping mostre que de 30 em 30 segundos enviamos uma mensagem para o hub de eventos
+* A imagem abaixo mostra uma parte do gráfico
+* ![image](https://github.com/Antonio-Borges-Rufino/Build-Streaming-Data-Pipeline-using-Azure-Stream-Analytics/assets/86124443/ab540023-4522-4cac-8bc3-8f2f2f6db349)
+* O código está funcionando
+# Crie um banco de dados SQL do Azure
+# Crie um trabalho de análise de fluxo do Azure.
+* Primeiro, vá no marketplace e procure por trabalhos do stream analytics e adicione um novo
+* A minha config é essa
+* ![image](https://github.com/Antonio-Borges-Rufino/Build-Streaming-Data-Pipeline-using-Azure-Stream-Analytics/assets/86124443/0ff95775-ffe2-4642-91e2-abf9c508d278)
+* Após criar, vá ate o grupo de recursos e acesso o recurso trabalhos do stream analytics
+* Nele, vamos criar conexções para conseguir ler e trabalhar com os dados em stream
+* Para isso, crie uma nova entrada e coloque a entrada como sendo um hub event, como na imagem abaixo
+* ![image](https://github.com/Antonio-Borges-Rufino/Build-Streaming-Data-Pipeline-using-Azure-Stream-Analytics/assets/86124443/67625078-d8ac-468c-90b0-3fcaa834b633)
+* Configure com as configurações já feitas anteriormente utilizando os botões "usar existente". Em modo de autenticação, use o modo atribuido pelo sistema
+* 
 
 
 
