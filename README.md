@@ -132,8 +132,17 @@
 * Agora vamos para o nosso banco de dados, para isso, vá até o grupo de recurso e acesse o recurso "Banco de Dados SQL"
 * Depois de acessar o recurso, vá até editor de consultas e acesse usando a autenticação SQL
 * ![image](https://github.com/Antonio-Borges-Rufino/Build-Streaming-Data-Pipeline-using-Azure-Stream-Analytics/assets/86124443/45d34493-ea8c-4cd1-a14b-d49c183643dd)
-
-  
+* Depois que se autenticar, crie a tabela para inserimos os dados executando o seguinte comando
+* ```
+  CREATE TABLE Viagens (
+    id_corrida INT PRIMARY KEY IDENTITY(1,1),
+    n_pessoas INT,
+    custo FLOAT,
+    distancia FLOAT,
+    nota INT
+  );
+  ```
+* Agora temos a tabela no banco de dados para podermos inserir os registros
 # Crie um trabalho de análise de fluxo do Azure.
 * Primeiro, vá no marketplace e procure por trabalhos do stream analytics e adicione um novo
 * A minha config é essa
@@ -143,6 +152,11 @@
 * Para isso, crie uma nova entrada e coloque a entrada como sendo um hub event, como na imagem abaixo
 * ![image](https://github.com/Antonio-Borges-Rufino/Build-Streaming-Data-Pipeline-using-Azure-Stream-Analytics/assets/86124443/67625078-d8ac-468c-90b0-3fcaa834b633)
 * Configure com as configurações já feitas anteriormente utilizando os botões "usar existente". Em modo de autenticação, use o modo atribuido pelo sistema
+* Agora vamos configurar a saida, nesse caso, vamos inserir os dados processados no banco de dados que criamos. Para isso, vá até saidas, adicione uma nova saida como "Banco de Dados SQL", insira a sua autenticação e carregue a tabela. A imagem abaixo mostra o processo
+* ![image](https://github.com/Antonio-Borges-Rufino/Build-Streaming-Data-Pipeline-using-Azure-Stream-Analytics/assets/86124443/5f93010a-c5fe-4a4f-82ba-6bfc80660c1d)
+* Agora vá até consulta e salve a consulta padrão que está determinada. Essa consulta recebe os dados e os envia para o banco de dados. A imagem abaixo mostra a consulta e os comandos.
+* ![image](https://github.com/Antonio-Borges-Rufino/Build-Streaming-Data-Pipeline-using-Azure-Stream-Analytics/assets/86124443/d11cf2bd-f74f-491d-af65-4a97d53d4082)
+* Aqui vamos destacar apenas uma diferença, no Stream Analytics, a consulta é inserida na saída através da clausula 'INTO', netão nessa clausula indicamos a saída, nesse caso o nome da saída que configuramos anteriormente e na clausula 'FROM' indicamos a entrada, nesse caso, podemos ter N saidas e N entradas. No mais, tudo funciona como um SQL normal.
 
 
 
