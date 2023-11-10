@@ -15,6 +15,12 @@
 * Para criar um hub de eventos, antes, precisamos criar um grupo de recursos
 * Depois de criar o grupo de recursos, vá no marketplace e crie um hub de eventos
 * ![image](https://github.com/Antonio-Borges-Rufino/Build-Streaming-Data-Pipeline-using-Azure-Stream-Analytics/assets/86124443/1903fa28-4d57-4ee0-9888-b00e01ae7286)
-* 
+* As informações do meu hub de eventos está a seguir. Eu cobri algumas que são informações das configurações pessoais da azure
+* ![image](https://github.com/Antonio-Borges-Rufino/Build-Streaming-Data-Pipeline-using-Azure-Stream-Analytics/assets/86124443/5ffe20f2-d2b6-40ff-9819-4fecc448d9ca)
+* O que fiz foi criar um namespace para o hub de evento. Você pode acessar seu namespace através do grupo de serviço
+* Após acessar meu namespace do hub de eventos, vou criar de fato o hub de evento que vou usar
+* ![image](https://github.com/Antonio-Borges-Rufino/Build-Streaming-Data-Pipeline-using-Azure-Stream-Analytics/assets/86124443/5368825b-876e-4e38-aa1e-afd033550c01)
+
+
 
 
