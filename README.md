@@ -89,6 +89,51 @@
 * ![image](https://github.com/Antonio-Borges-Rufino/Build-Streaming-Data-Pipeline-using-Azure-Stream-Analytics/assets/86124443/ab540023-4522-4cac-8bc3-8f2f2f6db349)
 * O código está funcionando
 # Crie um banco de dados SQL do Azure
+* Para criar um banco de dados no Azure vá no marketplace e procure por "Banco de Dados SQL"
+* Agora, crie um novo banco de dados
+* Para criar um novo banco de dados, antes é preciso criar um novo servidor de banco de dados. Para isso clique na opção como na figura abaixo
+* ![image](https://github.com/Antonio-Borges-Rufino/Build-Streaming-Data-Pipeline-using-Azure-Stream-Analytics/assets/86124443/93380b0d-64ea-43bc-85a1-7e76a67b6892)
+* Para criar o servidor, use a autenticação SQL
+* Configure o servidor da forma que preferir
+* Para o banco de dados, as configurações foram as seguintes
+* ```
+  Básico
+  Assinatura: --------
+  Grupo de recursos: --------
+  Região: East US
+  Nome do banco de dados: -------
+  Servidor: --------------
+  Método de autenticação: Autenticação do SQL
+  Logon do administrador do servidor: ---------
+  Computação + armazenamento: Uso Geral - Sem servidor: Série Standard (Gen5), 1 vCore, 32 GB de armazenamento, zona redundante desabilitada
+  Redundância do armazenamento de backup: Armazenamento de backup com redundância local
+  Rede 
+  Permitir que serviços e recursos do Azure acessem este servidor: Sim
+  Adicionar o endereço IP do cliente atual -------: Não
+  Ponto de extremidade privado: Nenhum
+  Versão mínima do TLS: 1.2
+  Política de Conexão: Default
+  Segurança
+  Identidade: Não habilitado
+  Transparent Data Encryption (Nível do servidor): Chave gerenciada por serviço selecionada
+  Chave gerenciada pelo cliente no nível do banco de dados: Não configurado
+  Identidade gerenciada atribuída pelo usuário no nível do banco de dados: Não configurado
+  Segurança de dados avançada: Agora não
+  Always encrypted with secure enclaves: Não configurado
+  Sql Razão (Banco de dados): Desabilitado
+  Digerir armazenamento: Desabilitado
+  Configurações adicionais 
+  Usar dados existentes: Blank
+  Ordenação: SQL_Latin1_General_CP1_CI_AS
+  Janela de manutenção: Padrão do sistema (17h às 8h)
+  ```
+* Depois de criar o servidor, precisamos habilitar os ips de acesso, para fazer isso, vá até grupos de recurso, entre no servidor de banco de dados, segurança e rede e adicione uma regra de acesso. A imagem abaixo mostra o recurso
+* ![image](https://github.com/Antonio-Borges-Rufino/Build-Streaming-Data-Pipeline-using-Azure-Stream-Analytics/assets/86124443/2c294baf-4769-483b-b100-14d56a73b8bf)
+* Agora vamos para o nosso banco de dados, para isso, vá até o grupo de recurso e acesse o recurso "Banco de Dados SQL"
+* Depois de acessar o recurso, vá até editor de consultas e acesse usando a autenticação SQL
+* ![image](https://github.com/Antonio-Borges-Rufino/Build-Streaming-Data-Pipeline-using-Azure-Stream-Analytics/assets/86124443/45d34493-ea8c-4cd1-a14b-d49c183643dd)
+
+  
 # Crie um trabalho de análise de fluxo do Azure.
 * Primeiro, vá no marketplace e procure por trabalhos do stream analytics e adicione um novo
 * A minha config é essa
@@ -98,7 +143,8 @@
 * Para isso, crie uma nova entrada e coloque a entrada como sendo um hub event, como na imagem abaixo
 * ![image](https://github.com/Antonio-Borges-Rufino/Build-Streaming-Data-Pipeline-using-Azure-Stream-Analytics/assets/86124443/67625078-d8ac-468c-90b0-3fcaa834b633)
 * Configure com as configurações já feitas anteriormente utilizando os botões "usar existente". Em modo de autenticação, use o modo atribuido pelo sistema
-* 
+
+
 
 
 
