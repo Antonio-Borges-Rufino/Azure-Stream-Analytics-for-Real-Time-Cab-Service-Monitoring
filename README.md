@@ -80,7 +80,14 @@
   * Depois eu printo os dados
   * Por fim, vou criar um looping que vai ficar enviando os eventos em determinado tempo
   * ```
+    for count in range(1,150):
+      main(count)
+      time.sleep(30)
     ```
-  *
+  * O looping mostre que de 30 em 30 segundos enviamos uma mensagem para o hub de eventos
+  * A imagem abaixo mostra uma parte do gráfico
+  * ![image](https://github.com/Antonio-Borges-Rufino/Build-Streaming-Data-Pipeline-using-Azure-Stream-Analytics/assets/86124443/ab540023-4522-4cac-8bc3-8f2f2f6db349)
+  * O código está funcionando
+
 
 
