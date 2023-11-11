@@ -180,9 +180,16 @@
 * Va até o banco de dados e veja se alguma informação foi enviada
 * ![image](https://github.com/Antonio-Borges-Rufino/Build-Streaming-Data-Pipeline-using-Azure-Stream-Analytics/assets/86124443/ac18ba4a-f1d8-4be4-a703-15b2a44d741f)
 * Pronto, agora as informações estão transitando da maneira correta
-
 # Integração com PowerBy
-
+* Para se conectar ao Azure abra o powerby, vá em obter dados > mais > Azure > Banco de Dados SQL do Azure
+* No menu de conexão, vai pedir o servidor, para você obter o servidor vá até o azure, vá no serviço servidor SQL e pegue o nome do servidor
+* ![image](https://github.com/Antonio-Borges-Rufino/Build-Streaming-Data-Pipeline-using-Azure-Stream-Analytics/assets/86124443/8b67d663-2b66-47b4-90a6-069109261564)
+* Após inserir o servidor, vai aparecer a conexão, no meu caso, utilizei a aba "Banco de Dados" e me conectei usando senha e logon que registrei ao criar o servidor de banco de dados
+* Agora temos a conexão com o power by
+* ![image](https://github.com/Antonio-Borges-Rufino/Build-Streaming-Data-Pipeline-using-Azure-Stream-Analytics/assets/86124443/34250abf-0b9e-4632-b95b-d8261cd73014)
+* Com essa conexão, dá para fazer os relatórios em streaming
+* ![image](https://github.com/Antonio-Borges-Rufino/Build-Streaming-Data-Pipeline-using-Azure-Stream-Analytics/assets/86124443/028552a8-b605-4d83-93f4-60587d51f77e)
+* A engenharia de dados termina aqui
 # Problemas com a conta azure
 * Aparentemente, não consigo usar o stream analitycs com essa conta, testei diversas quantidades de partições e units e nenhuma funcionou, todas estão dando o mesmo erro.
 * ![image](https://github.com/Antonio-Borges-Rufino/Build-Streaming-Data-Pipeline-using-Azure-Stream-Analytics/assets/86124443/9d43f335-aac6-4800-ab25-22bfb15a3212)
