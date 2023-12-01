@@ -1,5 +1,5 @@
 # Referencia
-* Esse projeto foi feito a partir do site (projectpro)[https://www.projectpro.io]
+* Esse projeto foi feito a partir do site [projectpro](https://www.projectpro.io), todas as referencias e estruturas pertencem exclusivamente a eles.
 # Diagrama
 ![image](https://github.com/Antonio-Borges-Rufino/Build-Streaming-Data-Pipeline-using-Azure-Stream-Analytics/assets/86124443/480f3612-0e16-4033-b723-e570f58a929d)
 # Passos
